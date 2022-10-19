@@ -295,7 +295,7 @@ impl<Tx: Clone + Debug> ClaroSolver<Tx> {
 
 #[cfg(test)]
 mod test {
-    use crate::claro::{Decision, ClaroConfiguration, ClaroSolver, QueryConfiguration, Vote};
+    use crate::claro::{ClaroConfiguration, ClaroSolver, Decision, QueryConfiguration, Vote};
     use crate::query::NodeQuery;
     use crate::testing::query::*;
     use crate::{Opinion, VoteQuery};

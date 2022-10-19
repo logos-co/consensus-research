@@ -6,7 +6,7 @@ mod tracing;
 pub mod testing;
 
 pub use self::claro::{
-    Decision, ClaroConfiguration, ClaroSolver, ClaroState, Opinion, QueryConfiguration, Vote,
+    ClaroConfiguration, ClaroSolver, ClaroState, Decision, Opinion, QueryConfiguration, Vote,
 };
 pub use self::query::{NodeId, NodeQuery, NodeWeight, NodesSample, VoteQuery};
 pub use self::tracing::{claro_tracing_layer_with_writer, CLARO_TARGET_TAG};
