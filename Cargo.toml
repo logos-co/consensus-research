@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+    "consensus/claro",
+    "consensus/snowball",
+    "simulations/snow-family"
+]
+
+[profile.release-opt]
+inherits = "release"
+lto = true

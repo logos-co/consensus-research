@@ -1,0 +1,23 @@
+[package]
+name = "claro"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "Daniel Sanchez Quiros <danielsq@status.im>"
+]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1"
+rand = "0.8"
+tracing = "0.1"
+tracing-core = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "json", "std"] }
+tokio = { version = "1.17", features = ["sync"] }
+
+[dev-dependencies]
+tokio = { version = "1.17", features = ["rt-multi-thread", "macros"] }
+
+[features]
+default = []
+testing = []
