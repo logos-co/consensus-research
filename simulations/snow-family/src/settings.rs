@@ -102,7 +102,7 @@ pub struct ByzantineSettings {
     pub distribution: ByzantineDistribution,
 }
 
-#[derive(Debug, Deserialize, Default)]
+#[derive(Clone, Debug, Deserialize, Default)]
 pub enum SimulationStyle {
     #[default]
     Sync,
@@ -112,6 +112,10 @@ pub enum SimulationStyle {
     Glauber {
         maximum_iterations: usize,
         update_rate: usize,
+    },
+    Layered {
+        rounds_gap: usize,
+        distribution: Option<Vec<f32>>,
     },
 }
 

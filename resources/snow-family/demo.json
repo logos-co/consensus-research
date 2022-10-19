@@ -1,0 +1,47 @@
+{
+  "consensus_settings": {
+    "snow_ball": {
+      "quorum_size": 14,
+      "sample_size": 20,
+      "decision_threshold": 20
+    }
+  },
+  "distribution": {
+    "yes": 0.6,
+    "no": 0.4,
+    "none": 0.0
+  },
+  "byzantine_settings": {
+    "total_size": 10000,
+    "distribution": {
+      "honest": 1.0,
+      "infantile": 0.0,
+      "random": 0.0,
+      "omniscient": 0.0
+    }
+  },
+  "wards": [
+    {
+      "time_to_finality": {
+        "ttf_threshold" : 10
+      }
+    },
+    {
+      "stabilised": {
+        "rounds": 4
+      }
+    },
+    {
+      "converged": {
+        "ratio": 1
+      }
+    }
+  ],
+  "network_modifiers": [
+    {
+      "random_drop": {
+        "drop_rate": 0.01
+      }
+    }
+  ]
+}

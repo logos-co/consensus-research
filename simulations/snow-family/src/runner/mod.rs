@@ -1,5 +1,6 @@
 mod async_runner;
 mod glauber_runner;
+mod layered_runner;
 mod sync_runner;
 
 // std
@@ -242,18 +243,24 @@ impl SimulationRunner {
     }
 
     pub fn simulate(&mut self, out_data: Option<&mut Vec<OutData>>) {
-        match &self.settings.simulation_style {
+        match self.settings.simulation_style.clone() {
             SimulationStyle::Sync => {
                 sync_runner::simulate(self, out_data);
             }
-            &SimulationStyle::Async { chunks } => {
+            SimulationStyle::Async { chunks } => {
                 async_runner::simulate(self, chunks, out_data);
             }
-            &SimulationStyle::Glauber {
+            SimulationStyle::Glauber {
                 maximum_iterations,
                 update_rate,
             } => {
                 glauber_runner::simulate(self, update_rate, maximum_iterations, out_data);
+            }
+            SimulationStyle::Layered {
+                rounds_gap,
+                distribution,
+            } => {
+                layered_runner::simulate(self, rounds_gap, distribution, out_data);
             }
         }
     }

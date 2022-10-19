@@ -1,0 +1,43 @@
+{
+  "consensus_settings": {
+    "claro": {
+      "evidence_alpha": 0.8,
+      "evidence_alpha_2": 0.5,
+      "look_ahead": 20,
+      "query": {
+        "query_size": 10,
+        "initial_query_size": 10,
+        "query_multiplier": 2,
+        "max_multiplier": 4
+      }
+    }
+  },
+  "distribution": {
+    "yes": 0.5,
+    "no": 0.5,
+    "none": 0
+  },
+  "byzantine_settings": {
+    "total_size": 1000,
+    "distribution": {
+      "honest": 1.0,
+      "infantile": 0.0,
+      "random": 0.0,
+      "omniscient": 0.0
+    }
+  },
+  "wards": [
+    {
+      "time_to_finality": {
+        "ttf_threshold" : 100
+      }
+    }
+  ],
+  "network_modifiers": [
+    {
+      "random_drop": {
+        "drop_rate": 0.00
+      }
+    }
+  ]
+}

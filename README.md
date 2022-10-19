@@ -6,7 +6,7 @@
   * `snowball`: Snowball implementation
   * `claro`: Claro implementation
 * `prototypes`: Simulations and experiments related libraries and binaries
-  * `consensus-simulations`: Consensus simulations app
+  * `snow-family`: Snow family and `claro` simulations app
 
 ## Build & Test
 
