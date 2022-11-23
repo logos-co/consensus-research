@@ -23,9 +23,10 @@ jobs:
 
   test:
     name: Test Suite
+    if: ${{ !startsWith(github.event.pull_request.title, '[WIP]') }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest] # macos-latest might be readded later
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
